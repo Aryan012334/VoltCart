@@ -25,7 +25,7 @@ exports[`Privacy snapshot matches the rendered markup 1`] = `
       <p
         class="MuiTypography-root MuiTypography-body1 css-81jeky-MuiTypography-root"
       >
-        We collect only what we need to ship exceptional products and continuously improve the Fusion experience. The details below outline exactly how it works.
+        We collect only what is needed to process orders and support the VoltCart experience. The details below outline how information is used. works.
       </p>
       <span
         class="MuiTypography-root MuiTypography-caption css-ol7wxs-MuiTypography-root"

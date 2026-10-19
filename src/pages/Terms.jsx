@@ -10,7 +10,7 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 const termsSections = [
   {
     title: 'Using our platform',
-    copy: 'Fusion Electronics delivers a curated digital storefront for premium consumer technology. By visiting our site you agree to engage respectfully, refrain from malicious activity, and only submit accurate personal details. Accounts may be suspended when suspicious behaviour is detected to keep the community safe.',
+    copy: 'VoltCart provides an online storefront for consumer electronics. By using the site, you agree to provide accurate information and not misuse the service. Access may be restricted where necessary to protect the store and its users.',
     icon: <VerifiedUserIcon color="primary" fontSize="large" />,
   },
   {
@@ -44,7 +44,7 @@ function Terms() {
           The agreement that powers our partnership
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 680 }}>
-          These terms ensure every Fusion Electronics order is handled with integrity, transparency, and the level of care you expect from a premium retailer.
+          These terms explain the conditions for using VoltCart and placing orders through the storefront.
         </Typography>
         <Typography variant="caption" color="text.secondary">
           Last updated: April 7, 2025

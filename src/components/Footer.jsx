@@ -3,12 +3,15 @@ import { Box, Container, Grid, Typography, Link as MuiLink, Stack, TextField, Ic
 import { Link as RouterLink } from 'react-router-dom';
 import SendIcon from '@mui/icons-material/Send';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
 import PrivacyTipOutlinedIcon from '@mui/icons-material/PrivacyTipOutlined';
 import GavelIcon from '@mui/icons-material/Gavel';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import { useNotifier } from '../context/NotificationProvider';
+import brandConfig from '../config/brand';
 
 const quickLinks = [
   { label: 'Home', to: '/' },
@@ -28,7 +31,9 @@ const helpLinks = [
 ];
 
 const socialLinks = [
-  { icon: <GitHubIcon />, label: 'GitHub', href: 'https://github.com/Aryan012334' },
+  { icon: <GitHubIcon />, label: 'GitHub', href: brandConfig.links.github },
+  { icon: <LinkedInIcon />, label: 'LinkedIn', href: brandConfig.links.linkedin },
+  { icon: <EmailIcon />, label: 'Email', href: `mailto:${brandConfig.links.email}` },
 ];
 
 const policyLinks = [
@@ -62,12 +67,12 @@ function Footer() {
   };
 
   return (
-    <Box component="footer" sx={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)', color: 'white', mt: 8 }}>
+    <Box component="footer" sx={{ background: `linear-gradient(135deg, ${brandConfig.colors.primaryDark} 0%, #12366b 100%)`, color: 'white', mt: 8 }}>
       <Container maxWidth="xl" sx={{ py: { xs: 6, md: 8 } }}>
         <Grid container spacing={5}>
           <Grid item xs={12} md={4}>
             <Typography variant="h5" sx={{ fontWeight: 800, letterSpacing: '0.12em' }} gutterBottom>
-              FUSION ELECTRONICS
+              VOLTCART
             </Typography>
             <Typography variant="body2" sx={{ color: 'rgba(226,232,240,0.78)' }}>
               Curating cutting-edge gadgets, smart home essentials, and premium accessories to help you live smarter every day.
@@ -79,7 +84,7 @@ function Footer() {
                   component="a"
                   href={link.href}
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   color="inherit"
                   size="small"
                   aria-label={link.label}
@@ -164,7 +169,11 @@ function Footer() {
 
         <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} justifyContent="space-between" alignItems={{ xs: 'flex-start', md: 'center' }}>
           <Typography variant="body2" sx={{ color: 'rgba(226,232,240,0.7)' }}>
-            © {new Date().getFullYear()} Fusion Electronics. Crafted in California & powered worldwide.
+            © {new Date().getFullYear()} VoltCart. Built and maintained by
+            <MuiLink href={brandConfig.links.repository} target="_blank" rel="noopener noreferrer" color="inherit" underline="hover" sx={{ ml: 0.5 }}>
+              {brandConfig.developer}
+            </MuiLink>
+            .
           </Typography>
           <Stack direction="row" spacing={2} sx={{ color: 'rgba(226,232,240,0.7)', display: { xs: 'none', sm: 'flex' } }}>
             {policyLinks.map(link => (

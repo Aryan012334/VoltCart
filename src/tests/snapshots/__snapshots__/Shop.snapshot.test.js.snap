@@ -6,7 +6,7 @@ exports[`Shop snapshot matches the rendered markup (loaded, empty products) 1`] 
     class="MuiContainer-root MuiContainer-maxWidthXl css-1co2cf-MuiContainer-root"
   >
     <div
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 css-1osq6yb-MuiPaper-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 css-18rafjm-MuiPaper-root"
     >
       <div
         class="MuiStack-root css-1l4iccl-MuiStack-root"

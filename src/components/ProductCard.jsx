@@ -13,8 +13,9 @@ import Divider from '@mui/material/Divider';
 import Tooltip from '@mui/material/Tooltip';
 import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRounded';
 import { useNavigate } from 'react-router-dom';
+import brandConfig from '../config/brand';
 
-const ACCENT_GRADIENT = 'linear-gradient(120deg, #38bdf8 0%, #2874f0 45%, #f50057 100%)';
+const ACCENT_GRADIENT = `linear-gradient(120deg, ${brandConfig.colors.primary} 0%, ${brandConfig.colors.secondary} 100%)`;
 
 export default function ProductCard({ product, addToCart }) {
   const navigate = useNavigate();
@@ -49,8 +50,8 @@ export default function ProductCard({ product, addToCart }) {
         transition: 'transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease',
         '&:hover': {
           transform: 'translateY(-8px)',
-          boxShadow: '0 28px 50px rgba(40, 116, 240, 0.18)',
-          borderColor: 'rgba(40,116,240,0.35)',
+          boxShadow: '0 28px 50px rgba(21, 94, 239, 0.16)',
+          borderColor: 'rgba(21,94,239,0.35)',
         },
         '&:hover .product-media': {
           transform: 'scale(1.07)',
@@ -93,7 +94,7 @@ export default function ProductCard({ product, addToCart }) {
               position: 'absolute',
               top: 16,
               left: 16,
-              bgcolor: 'rgba(40,116,240,0.92)',
+              bgcolor: 'rgba(12,27,56,0.92)',
               color: '#fff',
               fontWeight: 600,
             }}
@@ -141,7 +142,7 @@ export default function ProductCard({ product, addToCart }) {
             event.stopPropagation();
             addToCart(product);
           }}
-          sx={{ background: ACCENT_GRADIENT, boxShadow: '0 10px 22px rgba(40,116,240,0.3)', '&:hover': { boxShadow: '0 14px 28px rgba(245,0,87,0.32)' } }}
+          sx={{ background: ACCENT_GRADIENT, boxShadow: '0 10px 22px rgba(21,94,239,0.24)', '&:hover': { boxShadow: '0 14px 28px rgba(22,184,166,0.3)' } }}
         >
           Add to Cart
         </Button>

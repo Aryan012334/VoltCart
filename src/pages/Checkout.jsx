@@ -158,7 +158,7 @@ function Checkout({ cartItems = [], onOrderComplete }) {
         <Divider sx={{ mb: 3 }} />
 
         {cartItems.length > 0 && (
-          <Paper elevation={0} sx={{ mb: 4, borderRadius: 3, background: 'rgba(40,116,240,0.06)', p: 2 }}>
+          <Paper elevation={0} sx={{ mb: 4, borderRadius: 3, background: 'rgba(21,94,239,0.06)', p: 2 }}>
             <Stack direction="row" spacing={1} alignItems="center">
               <ShoppingBagIcon color="primary" />
               <Typography variant="subtitle1" fontWeight={600}>

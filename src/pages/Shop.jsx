@@ -153,7 +153,7 @@ function Shop({ products, addToCart, loading, error }) {
     <Container maxWidth="xl" sx={{ pb: 8 }}>
       <Paper
         elevation={0}
-        sx={{ p: { xs: 3, md: 5 }, borderRadius: 4, mb: 4, background: 'linear-gradient(120deg, rgba(40,116,240,0.12) 0%, rgba(63,81,181,0.08) 100%)' }}
+        sx={{ p: { xs: 3, md: 5 }, borderRadius: 4, mb: 4, background: 'linear-gradient(120deg, rgba(21,94,239,0.12) 0%, rgba(22,184,166,0.08) 100%)' }}
       >
         <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} justifyContent="space-between" alignItems={{ xs: 'flex-start', md: 'center' }}>
           <Box>

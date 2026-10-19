@@ -27,6 +27,7 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
@@ -36,6 +37,7 @@ import { debounce } from 'lodash';
 import SearchResults from './SearchResults';
 import { apiClient } from '../services/apiClient';
 import { useNotifier } from '../context/NotificationProvider';
+import brandConfig from '../config/brand';
 
 const navLinks = [
   { label: 'Home', to: '/', icon: <HomeRoundedIcon fontSize="small" /> },
@@ -167,16 +169,19 @@ function NavigationBar({ cartItemCount }) {
       position="sticky"
       elevation={0}
       sx={{
-        background: 'linear-gradient(90deg, #111827 0%, #1f3a93 40%, #3154d0 100%)',
+        background: `linear-gradient(105deg, ${brandConfig.colors.primaryDark} 0%, #102c57 55%, ${brandConfig.colors.primary} 100%)`,
         mb: 4,
         borderRadius: 0,
         '& .logo-link': {
           textDecoration: 'none',
           color: 'white',
           fontWeight: 700,
-          fontSize: '1.6rem',
-          letterSpacing: '0.08em',
+          fontSize: '1.35rem',
+          letterSpacing: '-0.035em',
           whiteSpace: 'nowrap',
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.55rem',
         },
         '& .search-bar': {
           backgroundColor: 'rgba(255,255,255,0.12)',
@@ -274,7 +279,8 @@ function NavigationBar({ cartItemCount }) {
             </Menu>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, minWidth: 0 }}>
               <Link to="/" className="logo-link">
-                FUSION ELECTRONICS
+                <BoltRoundedIcon sx={{ color: brandConfig.colors.accent, fontSize: 28 }} />
+                VOLTCART
               </Link>
             </Typography>
           </>
@@ -282,10 +288,15 @@ function NavigationBar({ cartItemCount }) {
           <>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', gap: 1, minWidth: 0 }}>
               <Link to="/" className="logo-link">
-                FUSION ELECTRONICS
+                <BoltRoundedIcon sx={{ color: brandConfig.colors.accent, fontSize: 28 }} />
+                VOLTCART
               </Link>
-              <Typography component="span" variant="caption" sx={{ color: 'rgba(255,255,255,0.75)', whiteSpace: 'nowrap' }}>
-                Elevate Your Everyday Tech
+              <Typography
+                component="span"
+                variant="caption"
+                sx={{ color: 'rgba(255,255,255,0.75)', whiteSpace: 'nowrap', display: { lg: 'block', xl: 'block' } }}
+              >
+                {brandConfig.tagline}
               </Typography>
             </Typography>
             <form className="search-bar" ref={searchBarRef} onSubmit={e => e.preventDefault()}>

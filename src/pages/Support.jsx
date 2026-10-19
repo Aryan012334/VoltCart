@@ -20,7 +20,8 @@ const faqs = [
   },
   {
     question: 'Do products come with warranties?',
-    answer: 'Most of our gear includes a 1-year manufacturer warranty. For Fusion-branded collections we extend that to 24 months automatically.',
+    answer:
+      'Warranty coverage varies by manufacturer and product. Check the product listing and the documentation included with your purchase for the applicable terms.',
   },
   {
     question: 'Can I speak with a product specialist before ordering?',

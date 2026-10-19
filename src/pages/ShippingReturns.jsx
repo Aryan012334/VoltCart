@@ -58,7 +58,7 @@ function ShippingReturns() {
           From our warehouse to your setup, on your terms
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 680 }}>
-          Precision logistics, proactive updates, and a no-drama return policy make gearing up with Fusion Electronics effortless.
+          Find the information you need about delivery, order updates, and returns before you shop with VoltCart.
         </Typography>
       </Stack>
 

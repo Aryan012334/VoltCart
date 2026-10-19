@@ -33,8 +33,7 @@ function Privacy() {
           Your trust is the most valuable tech we protect
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 680 }}>
-          We collect only what we need to ship exceptional products and continuously improve the Fusion experience. The details below outline exactly how it
-          works.
+          We collect only what is needed to process orders and support the VoltCart experience. The details below outline how information is used. works.
         </Typography>
         <Typography variant="caption" color="text.secondary">
           Last updated: April 7, 2025

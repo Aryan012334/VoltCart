@@ -1,9 +1,9 @@
 {
-  "short_name": "Fusion",
-  "name": "Fusion Electronics",
+  "short_name": "VoltCart",
+  "name": "VoltCart",
   "lang": "en",
   "dir": "ltr",
-  "description": "Fusion Electronics delivers a production-ready MERN commerce experience with curated hardware, AI recommendations, and secure checkout.",
+  "description": "Discover electronics, smart-home essentials, and everyday tech with VoltCart.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -14,21 +14,10 @@
   "categories": ["shopping", "technology", "electronics"],
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "android-chrome-192x192.png",
-      "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "android-chrome-512x512.png",
-      "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
+      "src": "voltcart-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ],
   "shortcuts": [
@@ -38,9 +27,9 @@
       "url": "/shop",
       "icons": [
         {
-          "src": "android-chrome-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png"
+          "src": "voltcart-mark.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
         }
       ]
     },
@@ -50,9 +39,9 @@
       "url": "/cart",
       "icons": [
         {
-          "src": "android-chrome-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png"
+          "src": "voltcart-mark.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
         }
       ]
     },
@@ -62,9 +51,9 @@
       "url": "/support#contact",
       "icons": [
         {
-          "src": "android-chrome-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png"
+          "src": "voltcart-mark.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
         }
       ]
     }

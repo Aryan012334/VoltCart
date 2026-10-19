@@ -288,7 +288,7 @@ function ProductDetails({ addToCart }) {
               {product.name}
             </Typography>
             <Typography variant="h6" color="text.secondary" gutterBottom>
-              Brand: {product.brand || 'Fusion Electronics'}
+              Brand: {product.brand || 'VoltCart'}
             </Typography>
             <Typography variant="h6" color="text.secondary" gutterBottom>
               Category: {formatCategory(product.category)}

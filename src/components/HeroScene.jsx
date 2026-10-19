@@ -2,6 +2,7 @@ import React, { useMemo, useRef, useEffect, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Environment, Lightformer, Sparkles, RoundedBox } from '@react-three/drei';
 import * as THREE from 'three';
+import brandConfig from '../config/brand';
 
 /**
  * HeroScene — a fully procedural react-three-fiber backdrop for the storefront
@@ -14,10 +15,10 @@ import * as THREE from 'three';
  * back to a pure-CSS gradient hero.
  */
 
-const BLUE = '#2874f0';
-const PINK = '#f50057';
-const INDIGO = '#4f46e5';
-const SKY = '#38bdf8';
+const BLUE = brandConfig.colors.primary;
+const PINK = brandConfig.colors.secondary;
+const INDIGO = brandConfig.colors.primaryDark;
+const SKY = brandConfig.colors.accent;
 
 function SignatureKnot({ quality }) {
   const ref = useRef();

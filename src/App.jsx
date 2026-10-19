@@ -24,31 +24,37 @@ import OrderTracking from './pages/OrderTracking';
 import ScrollToTop from './components/ScrollToTop';
 import { apiClient, withRetry } from './services/apiClient';
 import { useNotifier } from './context/NotificationProvider';
+import brandConfig from './config/brand';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#2874f0',
+      main: brandConfig.colors.primary,
+      dark: brandConfig.colors.primaryDark,
     },
     secondary: {
-      main: '#f50057',
+      main: brandConfig.colors.secondary,
     },
     background: {
-      default: '#f4f7fb',
-      paper: '#ffffff',
+      default: brandConfig.colors.background,
+      paper: brandConfig.colors.paper,
     },
     text: {
-      primary: '#1f2933',
-      secondary: '#4b5563',
+      primary: brandConfig.colors.text,
+      secondary: brandConfig.colors.textSecondary,
     },
   },
   typography: {
-    fontFamily: 'Poppins, sans-serif',
+    fontFamily: '"Inter", "Poppins", "Segoe UI", sans-serif',
     h3: {
       fontWeight: 700,
     },
     h4: {
       fontWeight: 700,
+    },
+    h5: {
+      fontWeight: 700,
+      letterSpacing: '-0.02em',
     },
     button: {
       fontWeight: 600,
@@ -56,38 +62,39 @@ const theme = createTheme({
     },
   },
   shape: {
-    borderRadius: 14,
+    borderRadius: 12,
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 999,
+          borderRadius: 12,
           textTransform: 'none',
           paddingInline: 20,
+          fontWeight: 700,
         },
       },
     },
     MuiPaper: {
       styleOverrides: {
         root: {
-          borderRadius: 18,
-          boxShadow: '0 16px 30px rgba(40, 116, 240, 0.08)',
+          borderRadius: 16,
+          boxShadow: '0 12px 36px rgba(12, 27, 56, 0.06)',
         },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 18,
-          boxShadow: '0 18px 42px rgba(15, 23, 42, 0.08)',
+          borderRadius: 16,
+          boxShadow: '0 16px 40px rgba(12, 27, 56, 0.08)',
         },
       },
     },
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: '#f4f7fb',
+          backgroundColor: brandConfig.colors.background,
         },
       },
     },

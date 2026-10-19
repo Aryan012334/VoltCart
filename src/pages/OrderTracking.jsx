@@ -326,7 +326,7 @@ function OrderTracking() {
                   )}
                 </Stack>
                 <Typography variant="caption" color="text.secondary">
-                  Having trouble locating your ID? Search your inbox for the subject “Fusion Electronics Order Confirmation”.
+                  Having trouble locating your ID? Search your inbox for the subject “VoltCart Order Confirmation”.
                 </Typography>
               </Stack>
             </form>

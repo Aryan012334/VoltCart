@@ -146,7 +146,7 @@ exports[`OrderTracking snapshot matches the rendered markup 1`] = `
               <span
                 class="MuiTypography-root MuiTypography-caption css-ol7wxs-MuiTypography-root"
               >
-                Having trouble locating your ID? Search your inbox for the subject “Fusion Electronics Order Confirmation”.
+                Having trouble locating your ID? Search your inbox for the subject “VoltCart Order Confirmation”.
               </span>
             </div>
           </form>

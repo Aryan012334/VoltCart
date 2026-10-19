@@ -26,23 +26,20 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
-import LockIcon from '@mui/icons-material/Lock';
-import SyncIcon from '@mui/icons-material/Sync';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import StarIcon from '@mui/icons-material/Star';
-import StarRoundedIcon from '@mui/icons-material/StarRounded';
-import FormatQuoteRoundedIcon from '@mui/icons-material/FormatQuoteRounded';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import LocalOfferRoundedIcon from '@mui/icons-material/LocalOfferRounded';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
-import VerifiedRoundedIcon from '@mui/icons-material/VerifiedRounded';
+import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import '../App.css';
 import { apiClient, withRetry } from '../services/apiClient';
 import { useNotifier } from '../context/NotificationProvider';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import brandConfig from '../config/brand';
 
 // The 3D hero backdrop ships in its own lazy chunk and is only mounted on
 // capable GPUs (see detectGpuTier). Weak / reduced-motion devices keep the
@@ -82,7 +79,7 @@ function detectGpuTier() {
   return 'high';
 }
 
-const ACCENT_GRADIENT = 'linear-gradient(120deg, #38bdf8 0%, #2874f0 45%, #f50057 100%)';
+const ACCENT_GRADIENT = `linear-gradient(120deg, ${brandConfig.colors.primary} 0%, ${brandConfig.colors.secondary} 100%)`;
 
 const normalizeProduct = p => {
   const canonical = p._id || p.id;
@@ -91,42 +88,24 @@ const normalizeProduct = p => {
 
 const valueProps = [
   {
-    title: 'Free 2-Day Delivery',
-    description: 'Complimentary express shipping on all orders over $75 in the continental US.',
-    icon: <LocalShippingIcon fontSize="large" />,
+    title: 'Explore electronics',
+    description: 'Browse products across everyday tech, computers, and smart-home essentials.',
+    icon: <DevicesRoundedIcon fontSize="large" />,
   },
   {
-    title: 'Concierge Support',
-    description: 'Dedicated product specialists available 24/7 to help you level up your setup.',
-    icon: <HeadsetMicIcon fontSize="large" />,
+    title: 'Search the catalog',
+    description: 'Quickly find products by name or description and view the details that matter.',
+    icon: <SearchRoundedIcon fontSize="large" />,
   },
   {
-    title: 'Secure Checkout',
-    description: 'End-to-end encryption and trusted payment partners keep your data protected.',
-    icon: <LockIcon fontSize="large" />,
+    title: 'Build your cart',
+    description: 'Keep the products you want together while you browse the store.',
+    icon: <ShoppingBagOutlinedIcon fontSize="large" />,
   },
   {
-    title: '30-Day Returns',
-    description: 'Love it or send it back. Hassle-free returns on every single purchase.',
-    icon: <SyncIcon fontSize="large" />,
-  },
-];
-
-const testimonials = [
-  {
-    name: 'Riley Chen',
-    role: 'Content Creator',
-    quote: 'Fusion Electronics curates gear I didn’t even know I needed. The quality and delivery speed are unmatched.',
-  },
-  {
-    name: 'Morgan Patel',
-    role: 'Startup Founder',
-    quote: 'From smart home tech to productivity gadgets, everything arrives perfectly packaged and ready to go.',
-  },
-  {
-    name: 'Devon Brooks',
-    role: 'Product Designer',
-    quote: 'Their support team is next level. They helped me switch out a device overnight before a big launch.',
+    title: 'Discover related picks',
+    description: 'Explore recommendations based on products you have viewed.',
+    icon: <AutoAwesomeRoundedIcon fontSize="large" />,
   },
 ];
 
@@ -240,8 +219,8 @@ function SectionHeading({ eyebrow, title, subtitle, align = 'center' }) {
             letterSpacing: '0.18em',
             textTransform: 'uppercase',
             color: 'primary.main',
-            bgcolor: 'rgba(40,116,240,0.10)',
-            border: '1px solid rgba(40,116,240,0.18)',
+            bgcolor: 'rgba(21,94,239,0.10)',
+            border: '1px solid rgba(21,94,239,0.18)',
           }}
         >
           {eyebrow}
@@ -434,7 +413,7 @@ function Home({ products, addToCart, error, loading }) {
             <Stack spacing={3} alignItems="flex-start">
               <Chip
                 icon={<AutoAwesomeRoundedIcon sx={{ color: 'white !important' }} />}
-                label="Summer Tech Edit"
+                label="Discover VoltCart"
                 sx={{
                   bgcolor: 'rgba(255,255,255,0.12)',
                   color: 'white',
@@ -464,7 +443,7 @@ function Home({ products, addToCart, error, loading }) {
                 of your day.
               </Typography>
               <Typography variant="body1" sx={{ maxWidth: 480, lineHeight: 1.8, color: 'rgba(255,255,255,0.78)' }}>
-                Discover handpicked gadgets, smart-home essentials, and creator-ready accessories curated by our in-house specialists.
+                Explore electronics, smart-home essentials, and accessories for work, home, and everything in between.
               </Typography>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ width: { xs: '100%', sm: 'auto' } }}>
                 <Button
@@ -477,11 +456,11 @@ function Home({ products, addToCart, error, loading }) {
                     px: 3.5,
                     py: 1.4,
                     background: ACCENT_GRADIENT,
-                    boxShadow: '0 16px 38px rgba(40,116,240,0.45)',
-                    '&:hover': { boxShadow: '0 20px 46px rgba(245,0,87,0.4)' },
+                    boxShadow: '0 16px 38px rgba(21,94,239,0.35)',
+                    '&:hover': { boxShadow: '0 20px 46px rgba(22,184,166,0.3)' },
                   }}
                 >
-                  Shop best sellers
+                  Shop electronics
                 </Button>
                 <Button
                   variant="outlined"
@@ -502,26 +481,26 @@ function Home({ products, addToCart, error, loading }) {
               >
                 <Stack spacing={0.3}>
                   <Typography variant="h5" fontWeight={800}>
-                    4.8/5
+                    Shop
                   </Typography>
                   <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.65)' }}>
-                    12k+ reviews
+                    the catalog
                   </Typography>
                 </Stack>
                 <Stack spacing={0.3}>
                   <Typography variant="h5" fontWeight={800}>
-                    48h
+                    Save
                   </Typography>
                   <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.65)' }}>
-                    Avg. delivery
+                    items to your cart
                   </Typography>
                 </Stack>
                 <Stack spacing={0.3}>
                   <Typography variant="h5" fontWeight={800}>
-                    50k+
+                    Find
                   </Typography>
                   <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.65)' }}>
-                    Happy members
+                    related products
                   </Typography>
                 </Stack>
               </Stack>
@@ -543,21 +522,19 @@ function Home({ products, addToCart, error, loading }) {
               }}
             >
               <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1.5 }}>
-                {[0, 1, 2, 3, 4].map(i => (
-                  <StarRoundedIcon key={i} sx={{ color: '#fbbf24', fontSize: 20 }} />
-                ))}
+                <BoltRoundedIcon sx={{ color: brandConfig.colors.accent, fontSize: 30 }} />
               </Stack>
               <Typography variant="subtitle1" fontWeight={700}>
-                Trusted by 50,000+ builders
+                Tech for your everyday
               </Typography>
               <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', mt: 0.5, mb: 2 }}>
-                Premium gear, expert curation, and delivery you can count on.
+                Browse the catalog and find products for the way you work, create, and unwind.
               </Typography>
               <Stack spacing={1.2}>
                 {[
-                  { icon: <BoltRoundedIcon fontSize="small" />, label: 'Same-week express shipping' },
-                  { icon: <VerifiedRoundedIcon fontSize="small" />, label: 'Authentic, warrantied products' },
-                  { icon: <LockIcon fontSize="small" />, label: 'Encrypted, secure checkout' },
+                  { icon: <DevicesRoundedIcon fontSize="small" />, label: 'Electronics and accessories' },
+                  { icon: <SearchRoundedIcon fontSize="small" />, label: 'Search and product details' },
+                  { icon: <ShoppingBagOutlinedIcon fontSize="small" />, label: 'A cart that stays with you' },
                 ].map(item => (
                   <Stack key={item.label} direction="row" spacing={1.2} alignItems="center">
                     <Box sx={{ display: 'grid', placeItems: 'center', width: 28, height: 28, borderRadius: 2, background: ACCENT_GRADIENT }}>{item.icon}</Box>
@@ -585,7 +562,7 @@ function Home({ products, addToCart, error, loading }) {
                   borderRadius: 4,
                   border: '1px solid rgba(15,23,42,0.06)',
                   transition: 'transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease',
-                  '&:hover': { transform: 'translateY(-6px)', boxShadow: '0 24px 50px rgba(40,116,240,0.16)' },
+                  '&:hover': { transform: 'translateY(-6px)', boxShadow: '0 24px 50px rgba(21,94,239,0.16)' },
                 }}
               >
                 <Stack spacing={1.5}>
@@ -598,7 +575,7 @@ function Home({ products, addToCart, error, loading }) {
                       borderRadius: 3,
                       color: 'white',
                       background: ACCENT_GRADIENT,
-                      boxShadow: '0 12px 24px rgba(40,116,240,0.3)',
+                      boxShadow: '0 12px 24px rgba(21,94,239,0.22)',
                     }}
                   >
                     {card.icon}
@@ -616,7 +593,11 @@ function Home({ products, addToCart, error, loading }) {
         </Grid>
 
         {/* ====================== FEATURED ====================== */}
-        <SectionHeading eyebrow="Editor's picks" title="Featured Products" subtitle="Our specialists' top picks for this month — tried, tested, and loved." />
+        <SectionHeading
+          eyebrow="Selected from the catalog"
+          title="Featured Products"
+          subtitle="Explore products currently available in the VoltCart catalog."
+        />
 
         {error ? (
           <Alert severity="error" sx={{ maxWidth: 560, mx: 'auto' }}>
@@ -687,10 +668,10 @@ function Home({ products, addToCart, error, loading }) {
                 <LocalOfferRoundedIcon sx={{ fontSize: 16 }} /> Member exclusive
               </Typography>
               <Typography variant="h3" fontWeight={800} sx={{ color: '#fff', letterSpacing: '-0.02em', mb: 1.5, fontSize: { xs: '2rem', md: '2.6rem' } }}>
-                Up to 40% off premium audio & smart home.
+                Find your next favorite piece of tech.
               </Typography>
               <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.82)', maxWidth: 560, lineHeight: 1.7 }}>
-                Hand-picked bundles refreshed every week — with free express shipping, easy 30-day returns, and concierge setup help on every order.
+                Browse the catalog, compare product details, and add the items you want to your cart.
               </Typography>
             </Grid>
             <Grid item xs={12} md={4} sx={{ textAlign: { md: 'right' } }}>
@@ -736,7 +717,7 @@ function Home({ products, addToCart, error, loading }) {
                 New Arrivals
               </Typography>
               <Typography variant="body1" color="text.secondary" sx={{ mt: 0.5 }}>
-                Fresh drops from brands we love. Updated every week.
+                Browse recent additions to the product catalog.
               </Typography>
             </Box>
             <Button variant="text" endIcon={<ArrowForwardIcon />} component={RouterLink} to="/shop">
@@ -770,7 +751,7 @@ function Home({ products, addToCart, error, loading }) {
                       overflow: 'hidden',
                       border: '1px solid rgba(15,23,42,0.06)',
                       transition: 'transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease, border-color 0.3s ease',
-                      '&:hover': { transform: 'translateY(-6px)', boxShadow: '0 22px 40px rgba(40,116,240,0.16)', borderColor: 'rgba(40,116,240,0.35)' },
+                      '&:hover': { transform: 'translateY(-6px)', boxShadow: '0 22px 40px rgba(21,94,239,0.16)', borderColor: 'rgba(21,94,239,0.35)' },
                       '&:hover .cat-cta': { opacity: 1, transform: 'translateY(0)' },
                     }}
                     onClick={() => {
@@ -842,16 +823,16 @@ function Home({ products, addToCart, error, loading }) {
           )}
         </Box>
 
-        {/* ====================== TESTIMONIALS ====================== */}
+        {/* ====================== VOLTCART OVERVIEW ====================== */}
         <Box sx={{ mt: 12 }} data-reveal="true">
           <SectionHeading
-            eyebrow="Social proof"
-            title="Loved by creators & innovators"
-            subtitle="Real stories from customers building their dream setups with Fusion Electronics."
+            eyebrow="The VoltCart experience"
+            title="Tech shopping, made straightforward"
+            subtitle={`Use ${brandConfig.name} to discover products, review details, and keep your picks together.`}
           />
           <Grid container spacing={3}>
-            {testimonials.map(testimonial => (
-              <Grid item xs={12} md={4} key={testimonial.name}>
+            {valueProps.slice(0, 3).map(feature => (
+              <Grid item xs={12} md={4} key={feature.title}>
                 <Paper
                   elevation={0}
                   sx={{
@@ -861,24 +842,20 @@ function Home({ products, addToCart, error, loading }) {
                     border: '1px solid rgba(15,23,42,0.06)',
                     position: 'relative',
                     transition: 'transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease',
-                    '&:hover': { transform: 'translateY(-6px)', boxShadow: '0 24px 50px rgba(40,116,240,0.14)' },
+                    '&:hover': { transform: 'translateY(-6px)', boxShadow: '0 24px 50px rgba(21,94,239,0.14)' },
                   }}
                 >
-                  <FormatQuoteRoundedIcon sx={{ fontSize: 40, color: 'rgba(40,116,240,0.25)' }} />
-                  <Typography variant="body1" sx={{ my: 1.5, lineHeight: 1.7 }}>
-                    “{testimonial.quote}”
+                  <Box
+                    sx={{ display: 'grid', placeItems: 'center', width: 52, height: 52, mb: 2, borderRadius: 3, color: 'white', background: ACCENT_GRADIENT }}
+                  >
+                    {feature.icon}
+                  </Box>
+                  <Typography variant="h6" fontWeight={700}>
+                    {feature.title}
                   </Typography>
-                  <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mt: 2 }}>
-                    <Avatar sx={{ background: ACCENT_GRADIENT, color: 'white', fontWeight: 700 }}>{testimonial.name.charAt(0)}</Avatar>
-                    <Box>
-                      <Typography variant="subtitle1" fontWeight={700} sx={{ lineHeight: 1.2 }}>
-                        {testimonial.name}
-                      </Typography>
-                      <Typography variant="caption" color="text.secondary">
-                        {testimonial.role}
-                      </Typography>
-                    </Box>
-                  </Stack>
+                  <Typography variant="body2" color="text.secondary" sx={{ mt: 1, lineHeight: 1.7 }}>
+                    {feature.description}
+                  </Typography>
                 </Paper>
               </Grid>
             ))}
@@ -904,27 +881,27 @@ function Home({ products, addToCart, error, loading }) {
               <Stack spacing={2}>
                 <Chip
                   icon={<StarIcon fontSize="small" />}
-                  label="Join 50k+ tech enthusiasts"
+                  label="VoltCart updates"
                   sx={{ alignSelf: 'flex-start', bgcolor: 'rgba(255,255,255,0.16)', color: 'white' }}
                 />
                 <Typography variant="h4" fontWeight={800} sx={{ letterSpacing: '-0.02em' }}>
-                  Unlock curated buying guides and exclusive launch alerts.
+                  Get the latest from VoltCart.
                 </Typography>
                 <Typography variant="body1" sx={{ opacity: 0.9 }}>
-                  Subscribe to the Weekly Signal newsletter for bite-sized product breakdowns, setup inspiration, and member-only perks.
+                  Sign up to receive product news and store updates by email.
                 </Typography>
                 <Stack direction="row" spacing={3} sx={{ color: 'rgba(255,255,255,0.7)' }}>
                   <Stack>
                     <Typography variant="h6" fontWeight={700}>
-                      2x
+                      New
                     </Typography>
-                    <Typography variant="caption">More reward points</Typography>
+                    <Typography variant="caption">product highlights</Typography>
                   </Stack>
                   <Stack>
                     <Typography variant="h6" fontWeight={700}>
-                      48hr
+                      Store
                     </Typography>
-                    <Typography variant="caption">VIP launch previews</Typography>
+                    <Typography variant="caption">updates</Typography>
                   </Stack>
                 </Stack>
               </Stack>
@@ -992,7 +969,7 @@ function Home({ products, addToCart, error, loading }) {
               component={RouterLink}
               to="/shop"
               endIcon={<ArrowForwardIcon />}
-              sx={{ px: 4, py: 1.3, background: ACCENT_GRADIENT, boxShadow: '0 16px 38px rgba(40,116,240,0.35)' }}
+              sx={{ px: 4, py: 1.3, background: ACCENT_GRADIENT, boxShadow: '0 16px 38px rgba(21,94,239,0.28)' }}
             >
               View More Products
             </Button>

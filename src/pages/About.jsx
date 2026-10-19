@@ -1,169 +1,131 @@
 import * as React from 'react';
-import { Container, Typography, Grid, Paper, Stack, Chip, Avatar, Divider, Box } from '@mui/material';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
-import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
+import { Avatar, Box, Button, Chip, Container, Grid, Paper, Stack, Typography } from '@mui/material';
+import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
+import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import brandConfig from '../config/brand';
 
-const milestones = [
+const features = [
   {
-    year: '2018',
-    title: 'Launch',
-    description: 'Started Fusion Electronics with a mission to curate gear that empowers creators and everyday innovators.',
+    icon: <DevicesRoundedIcon fontSize="large" />,
+    title: 'Explore electronics',
+    description: 'Browse phones, computers, smart-home products, and everyday accessories in one storefront.',
   },
   {
-    year: '2020',
-    title: 'Global Warehouses',
-    description: 'Opened regional fulfillment hubs in Austin, Berlin, and Singapore to ship faster than ever.',
+    icon: <SearchRoundedIcon fontSize="large" />,
+    title: 'Find the right fit',
+    description: 'Search the catalog, compare product details, and discover related items.',
   },
   {
-    year: '2022',
-    title: 'Creator Collective',
-    description: 'Introduced our invite-only creator program to co-design exclusive bundles and gear edits.',
-  },
-  {
-    year: '2024',
-    title: '50k+ Members',
-    description: 'Celebrated 50,000 VIP members and expanded our line to include modular smart home ecosystems.',
-  },
-];
-
-const pillars = [
-  {
-    icon: <EmojiObjectsIcon fontSize="large" />,
-    title: 'Curated Tech Intelligence',
-    description: 'Every product we list goes through hands-on testing by our lab team. If it doesn’t elevate your setup, it doesn’t make the cut.',
-  },
-  {
-    icon: <PrecisionManufacturingIcon fontSize="large" />,
-    title: 'Responsible Innovation',
-    description: 'We partner with makers focused on energy efficiency, recycled materials, and ethical manufacturing.',
-  },
-  {
-    icon: <FavoriteBorderIcon fontSize="large" />,
-    title: 'Delightful Experiences',
-    description: 'From packaging to post-purchase support, we obsess over surprise-and-delight moments that keep customers inspired.',
-  },
-  {
-    icon: <RocketLaunchIcon fontSize="large" />,
-    title: 'Future-Ready Roadmap',
-    description: 'We collaborate with venture labs and indie builders to pilot limited-run drops before they hit mainstream shelves.',
+    icon: <ShoppingBagOutlinedIcon fontSize="large" />,
+    title: 'Shop with ease',
+    description: 'Keep a cart across visits, review your order, and follow the checkout flow.',
   },
 ];
 
 function About() {
   return (
-    <Container maxWidth="lg" sx={{ pb: 10 }}>
-      <Stack spacing={3} sx={{ textAlign: 'center', mt: 6, mb: 6 }} alignItems="center">
-        <Chip label="About Fusion" color="primary" variant="outlined" sx={{ alignSelf: 'center' }} />
-        <Typography variant="h3" fontWeight={800}>
-          We exist to help you curate the future.
-        </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 680, mx: 'auto', lineHeight: 1.9, textAlign: 'center' }}>
-          Fusion Electronics is a collective of engineers, industrial designers, and experience strategists. We scout the highest performing gadgets,
-          stress-test them in our lab, and package them into delightful experiences so you can focus on creating.
-        </Typography>
-      </Stack>
+    <Container maxWidth="lg" sx={{ pb: { xs: 8, md: 12 } }}>
+      <Paper
+        elevation={0}
+        sx={{
+          mt: { xs: 3, md: 6 },
+          mb: 5,
+          p: { xs: 4, md: 8 },
+          borderRadius: { xs: 4, md: 6 },
+          color: 'common.white',
+          overflow: 'hidden',
+          position: 'relative',
+          background:
+            'radial-gradient(circle at 85% 10%, rgba(22,184,166,0.34), transparent 32%), linear-gradient(130deg, #0c1b38 0%, #12366b 65%, #155eef 100%)',
+        }}
+      >
+        <Stack spacing={3} alignItems="flex-start" sx={{ maxWidth: 760 }}>
+          <Chip
+            icon={<BoltRoundedIcon sx={{ color: '#B9F227 !important' }} />}
+            label="About VoltCart"
+            sx={{ color: 'white', bgcolor: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)' }}
+          />
+          <Typography variant="h2" sx={{ fontSize: { xs: '2.5rem', md: '4rem' }, lineHeight: 1.05, fontWeight: 800, letterSpacing: '-0.045em' }}>
+            Good tech.
+            <br />
+            Easier to find.
+          </Typography>
+          <Typography variant="body1" sx={{ maxWidth: 620, color: 'rgba(255,255,255,0.78)', lineHeight: 1.8 }}>
+            VoltCart is an electronics storefront built to make browsing, comparing, and shopping for everyday technology feel straightforward.
+          </Typography>
+          <Button
+            href={brandConfig.links.repository}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="contained"
+            startIcon={<GitHubIcon />}
+            sx={{ color: '#0c1b38', bgcolor: '#B9F227', '&:hover': { bgcolor: '#a9df16' } }}
+          >
+            View the project
+          </Button>
+        </Stack>
+      </Paper>
 
-      <Grid container spacing={4}>
-        {pillars.map(pillar => (
-          <Grid item xs={12} md={6} key={pillar.title}>
-            <Paper elevation={0} sx={{ p: 4, borderRadius: 4, height: '100%' }}>
-              <Stack direction="row" spacing={2} alignItems="flex-start">
-                <Avatar sx={{ bgcolor: 'primary.main', color: 'white' }}>{pillar.icon}</Avatar>
-                <Box>
-                  <Typography variant="h6" fontWeight={700} gutterBottom>
-                    {pillar.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {pillar.description}
-                  </Typography>
-                </Box>
+      <Grid container spacing={2.5}>
+        {features.map(feature => (
+          <Grid item xs={12} md={4} key={feature.title}>
+            <Paper elevation={0} sx={{ p: { xs: 3, md: 3.5 }, border: '1px solid', borderColor: 'divider', borderRadius: 4, height: '100%' }}>
+              <Stack spacing={2}>
+                <Avatar sx={{ width: 52, height: 52, bgcolor: 'primary.main', color: 'common.white' }}>{feature.icon}</Avatar>
+                <Typography variant="h6" fontWeight={750}>
+                  {feature.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.75 }}>
+                  {feature.description}
+                </Typography>
               </Stack>
             </Paper>
           </Grid>
         ))}
       </Grid>
 
-      <Stack spacing={2} sx={{ mt: 8 }}>
-        <Typography variant="h4" fontWeight={700}>
-          Our Journey
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          From humble beginnings to a global community of builders, here’s how we’ve evolved.
-        </Typography>
-      </Stack>
-
-      <Paper elevation={0} sx={{ mt: 3, p: { xs: 3, md: 5 }, borderRadius: 4 }}>
-        <Grid container spacing={4} justifyContent="center">
-          {milestones.map(step => (
-            <Grid item xs={12} sm={6} key={step.year}>
-              <Stack spacing={1.5}>
-                <Chip label={step.year} color="primary" sx={{ alignSelf: 'flex-start' }} />
-                <Typography variant="h6" fontWeight={700}>
-                  {step.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {step.description}
-                </Typography>
-              </Stack>
-            </Grid>
-          ))}
-        </Grid>
-      </Paper>
-
-      <Paper elevation={0} sx={{ mt: 8, p: { xs: 3, md: 5 }, borderRadius: 4 }}>
-        <Grid container spacing={4} alignItems="center" justifyContent="center">
-          <Grid item xs={12} md={6} sx={{ textAlign: 'center' }}>
-            <Typography variant="h4" fontWeight={700} gutterBottom>
-              The collective behind the brand
-            </Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 3, maxWidth: 720, mx: 'auto' }}>
-              Our team spans hardware engineers, firmware wizards, service designers, and stylists obsessed with making tech effortless. We source directly from
-              makers and run micro-batch pilots before scaling popular favourites.
-            </Typography>
-            <Stack direction="row" spacing={3} justifyContent="center">
-              <Box textAlign="center">
-                <Typography variant="h5" fontWeight={700}>
-                  38
-                </Typography>
-                <Typography variant="caption" color="text.secondary">
-                  Specialists across 5 disciplines
-                </Typography>
-              </Box>
-              <Box textAlign="center">
-                <Typography variant="h5" fontWeight={700}>
-                  72%
-                </Typography>
-                <Typography variant="caption" color="text.secondary">
-                  Products scored 4.5★ or higher
-                </Typography>
-              </Box>
-              <Box textAlign="center">
-                <Typography variant="h5" fontWeight={700}>
-                  12
-                </Typography>
-                <Typography variant="caption" color="text.secondary">
-                  Partner labs worldwide
-                </Typography>
-              </Box>
-            </Stack>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper elevation={0} sx={{ p: 4, borderRadius: 4, bgcolor: 'background.paper' }}>
-              <Typography variant="h6" fontWeight={700} gutterBottom>
-                What we believe
-              </Typography>
-              <Divider sx={{ mb: 2 }} />
-              <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.8 }}>
-                • Technology should feel warm, human, and designed for real life.
-                <br />
-                • Transparency matters. We publish sourcing notes and lifecycle scores.
-                <br />• Community wins. Co-designing with our members leads to breakthrough ideas.
-              </Typography>
-            </Paper>
-          </Grid>
-        </Grid>
+      <Paper
+        elevation={0}
+        sx={{
+          mt: 3,
+          p: { xs: 3, md: 4 },
+          borderRadius: 4,
+          border: '1px solid',
+          borderColor: 'divider',
+          display: 'flex',
+          alignItems: { xs: 'flex-start', sm: 'center' },
+          flexDirection: { xs: 'column', sm: 'row' },
+          gap: 2.5,
+        }}
+      >
+        <Avatar sx={{ width: 60, height: 60, bgcolor: 'secondary.main', color: 'common.white', fontWeight: 800 }}>A</Avatar>
+        <Box sx={{ flex: 1 }}>
+          <Typography variant="overline" color="primary.main" fontWeight={700}>
+            Project maintainer
+          </Typography>
+          <Typography variant="h5" fontWeight={750}>
+            {brandConfig.developer}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Building and maintaining VoltCart.
+          </Typography>
+        </Box>
+        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
+          <Button href={brandConfig.links.github} target="_blank" rel="noopener noreferrer" startIcon={<GitHubIcon />} variant="outlined">
+            GitHub
+          </Button>
+          <Button href={brandConfig.links.linkedin} target="_blank" rel="noopener noreferrer" startIcon={<LinkedInIcon />} variant="outlined">
+            LinkedIn
+          </Button>
+          <Button href={`mailto:${brandConfig.links.email}`} startIcon={<EmailIcon />} variant="outlined">
+            Email
+          </Button>
+        </Stack>
       </Paper>
     </Container>
   );
